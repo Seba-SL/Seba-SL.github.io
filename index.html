@@ -34,14 +34,17 @@
     <link href="css/style.css" rel="stylesheet">
 
     <style>
-        /* Estilos para centrar los iframes */
-        .video-container {
-            text-align: center;
+        /* Estilos para el carrusel */
+        .video-carousel {
+            display: flex;
+            overflow-x: auto; /* Permite desplazamiento horizontal si hay más videos */
+            gap: 20px; /* Espaciado entre los iframes */
+            padding: 20px; /* Ajusta según sea necesario */
         }
 
         iframe {
-            display: block;
-            margin: 0 auto; /* Esto centra horizontalmente el iframe */
+            flex: 0 0 60%; /* Ajusta el ancho de los iframes según tus preferencias */
+            max-width: 100%; /* Asegura que los iframes no superen el ancho del contenedor */
         }
     </style>
 </head>
@@ -110,10 +113,12 @@
 <!-- Navbar End -->
 
 <!--Contenido Destacado Inicio -->
-<div class="video-container">
+<div class="video-carousel">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/s8kuimgjVyI?si=YP7MMd002L-8_Id3" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/C1SnwZt8Bz0?si=5HAtrlOlJWCZvYiT" title="YouTube video player" frameborder="10" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <!-- Agrega más iframes según sea necesario -->
 </div>
 <!--Contenido Destacado FIN -->
 
