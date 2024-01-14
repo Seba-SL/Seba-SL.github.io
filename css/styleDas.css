@@ -533,7 +533,7 @@
   
   .img-thumbnail {
     padding: 0.25rem;
-    background-color: #fff;
+    background-color: #1b1b1b;
     border: 1px solid #dee2e6;
     max-width: 100%;
     height: auto;
@@ -555,7 +555,7 @@
   
   code {
     font-size: 87.5%;
-    color: #644a1a;
+    color: #bfb7a8;
     word-wrap: break-word;
   }
   
