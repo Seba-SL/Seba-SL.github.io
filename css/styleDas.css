@@ -1910,7 +1910,7 @@
     background-color: #fff;
     border-color: #f5e6cd;
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(223, 177, 99, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(54, 54, 53, 0.25);
   }
   
   .form-control::placeholder {
@@ -2378,22 +2378,22 @@
   
   .btn-primary:focus, .btn-primary.focus {
     color: #212529;
-    background-color: #d8a143;
-    border-color: #d69c39;
+    background-color: #a29b8e;
+    border-color: #504c46;
     box-shadow: 0 0 0 0.2rem rgba(195, 156, 90, 0.5);
   }
   
   .btn-primary.disabled, .btn-primary:disabled {
     color: #212529;
-    background-color: #DFB163;
-    border-color: #DFB163;
+    background-color: #24221e;
+    border-color: #1b1b1a;
   }
   
   .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
   .show > .btn-primary.dropdown-toggle {
     color: #212529;
-    background-color: #d69c39;
-    border-color: #d4972e;
+    background-color: #4b463c;
+    border-color: #121212;
   }
   
   .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
