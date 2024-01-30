@@ -9693,11 +9693,11 @@ iframe {
 }
 
 .grid-gallery__image {
-        max-width: 200px; /* ajusta el ancho máximo según tus necesidades */
-        max-height: 200px; /* ajusta la altura máxima según tus necesidades */
+        max-width: 500px; /* ajusta el ancho máximo según tus necesidades */
+        max-height: 500px; /* ajusta la altura máxima según tus necesidades */
     }
 
-@media all and (min-width: 100px) {
+@media all and (min-width: 500px) {
   .grid-gallery {
     grid-template-columns: repeat(1, 1fr);
   }
