@@ -9689,7 +9689,13 @@ iframe {
   grid-auto-rows: 100px;
   gap: 1rem;
   grid-auto-flow: row dense;
+
 }
+
+.grid-gallery__image {
+        max-width: 200px; /* ajusta el ancho máximo según tus necesidades */
+        max-height: 200px; /* ajusta la altura máxima según tus necesidades */
+    }
 
 @media all and (min-width: 100px) {
   .grid-gallery {
