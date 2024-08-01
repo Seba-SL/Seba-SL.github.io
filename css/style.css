@@ -9702,7 +9702,6 @@ iframe {
   object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
   margin-right: 10px; /* Espacio entre las imágenes */
   border-radius: 8px; /* Opcional: bordes redondeados */
-  transition: transform 0.3s ease; /* Animación suave para la transformación */
 }
 
 .gallery {
