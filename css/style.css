@@ -9686,9 +9686,9 @@ iframe {
 
 
 .grid-gallery {
-  flex: 0 0 auto; /* Evita que las imágenes se estiren */
+  display: flex; /* Dispone las imágenes en una sola fila */
   justify-content: center; /* Centra horizontalmente el contenedor de imágenes */
-  flex-wrap: auto; /* No permite el ajuste a la siguiente línea */
+  flex-wrap: nowrap; /* No permite el ajuste a la siguiente línea */
   overflow-x: auto; /* Permite el desplazamiento horizontal si las imágenes no caben */
   width: 150px; /* Tamaño fijo para las imágenes */
   height: 150px; /* Tamaño fijo para las imágenes */
