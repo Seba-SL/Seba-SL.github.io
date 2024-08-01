@@ -9690,8 +9690,6 @@ iframe {
   justify-content: center; /* Centra horizontalmente el contenedor de imágenes */
   flex-wrap: nowrap; /* No permite el ajuste a la siguiente línea */
   overflow-x: auto; /* Permite el desplazamiento horizontal si las imágenes no caben */
-  width: 150px; /* Tamaño fijo para las imágenes */
-  height: 150px; /* Tamaño fijo para las imágenes */
   padding: 10px;
   gap: 10px; /* Espacio entre las imágenes */
 }
@@ -9721,8 +9719,6 @@ iframe {
 }
 
 
-
-
 .gallery-item {
   position: relative;
   overflow: hidden;
@@ -9733,8 +9729,4 @@ iframe {
   height: auto;
   display: block;
   transition: transform 0.3s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
 }
