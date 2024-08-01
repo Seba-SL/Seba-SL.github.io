@@ -9699,7 +9699,7 @@ iframe {
 .grid-gallery__image {
   flex: 0 0 auto; /* Evita que las imágenes se estiren */
   justify-content: center; /* Centra horizontalmente el contenedor de imágenes */
-  width: 310px; /* Tamaño fijo para las imágenes */
+  width: 325px; /* Tamaño fijo para las imágenes */
   height: 370px; /* Tamaño fijo para las imágenes */
   object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
   margin-right: 5px; /* Espacio entre las imágenes */
