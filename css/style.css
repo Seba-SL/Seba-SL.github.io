@@ -9697,6 +9697,11 @@ iframe {
   gap: 10px; /* Espacio entre las imágenes */
 }
 
+
+.imagen-container {
+  justify-content: center;
+}
+
 .grid-gallery__image {
   flex: 0 0 auto; /* Evita que las imágenes se estiren */
   justify-content: center; /* Centra horizontalmente el contenedor de imágenes */
