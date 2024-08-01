@@ -9675,12 +9675,12 @@ h6 {
 .video-carousel {
   display: flex;
   overflow-x: auto; /* Permite desplazamiento horizontal si hay más videos */
-  gap: 10px; /* Espaciado entre los iframes */
-  padding: 30px; /* Ajusta según sea necesario */
+  gap: 5px; /* Espaciado entre los iframes */
+  padding: 50px; /* Ajusta según sea necesario */
 }
 
 iframe {
-  flex: 0 0 60%; /* Ajusta el ancho de los iframes según tus preferencias */
+  flex: 0 0 80%; /* Ajusta el ancho de los iframes según tus preferencias */
   max-width: 25%; /* Asegura que los iframes no superen el ancho del contenedor */
 }
 
