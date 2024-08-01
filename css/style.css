@@ -9707,6 +9707,13 @@ iframe {
   gap: 10px;
 }
 
+.grid-gallery-container {
+  display: flex; /* Usa Flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente el contenedor de imágenes */
+  overflow-x: auto; /* Permite el desplazamiento horizontal si es necesario */
+  padding: 10px;
+}
+
 .gallery-item {
   position: relative;
   overflow: hidden;
