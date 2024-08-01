@@ -9684,6 +9684,23 @@ iframe {
   max-width: 25%; /* Asegura que los iframes no superen el ancho del contenedor */
 }
 
+
+.grid-gallery {
+  display: flex; /* Dispone las imágenes en una sola fila */
+  flex-wrap: nowrap; /* No permite el ajuste a la siguiente línea */
+  overflow-x: auto; /* Permite el desplazamiento horizontal si las imágenes no caben */
+  padding: 10px;
+  gap: 10px; /* Espacio entre las imágenes */
+}
+
+.grid-gallery__image {
+  flex: 0 0 auto; /* Evita que las imágenes se estiren */
+  width: 120px; /* Tamaño fijo para las imágenes */
+  height: 120px; /* Tamaño fijo para las imágenes */
+  object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+  border-radius: 8px; /* Opcional: bordes redondeados */
+}
+
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
