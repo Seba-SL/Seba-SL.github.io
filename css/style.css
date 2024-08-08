@@ -9761,8 +9761,8 @@ th {
 }
 
 td img {
-  width: 24px;
-  height: 24px;
+  width: 45px;
+  height: 45px;
 }
 
 .status {
@@ -9794,6 +9794,7 @@ td img {
       display: block;
       overflow-x: auto;
       white-space: nowrap;
+      width: 30%;
   }
   
   th, td {
