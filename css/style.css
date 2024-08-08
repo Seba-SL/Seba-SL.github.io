@@ -200,10 +200,37 @@ svg {
   overflow: hidden;
   vertical-align: middle;
 }
-
 table {
+  width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+.icon-column {
+  width: 80px; /* Ajusta el ancho de la columna del ícono */
+}
+
+.name-column {
+  width: 150px; /* Ajusta el ancho de la columna del nombre */
+}
+
+.description-column {
+  width: 250px; /* Ajusta el ancho de la columna de descripción */
+}
+
+.tech-column {
+  width: 500px; /* Ajusta el ancho de la columna de tecnologías */
+}
+
+.status-column {
+  width: 120px; /* Ajusta el ancho de la columna de estado */
+}
+
 
 caption {
   padding-top: 0.75rem;
