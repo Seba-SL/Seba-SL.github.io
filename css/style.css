@@ -9738,3 +9738,49 @@ iframe {
   display: block;
   transition: transform 0.3s ease;
 }
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #15151b;
+  color: white;
+}
+
+td img {
+  width: 24px;
+  height: 24px;
+}
+
+.status {
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+.status.completed {
+  background-color: #4CAF50;
+}
+
+.status.in-progress {
+  background-color: #FFC107;
+}
+
+.status.planned {
+  background-color: #2196F3;
+}
