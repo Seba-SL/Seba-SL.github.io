@@ -9750,6 +9750,11 @@ table, th, td {
   border: 1px solid #ddd;
 }
 
+.tech-column {
+  width: 800px; /* Ajusta este valor según tus necesidades */
+}
+
+
 th, td {
   padding: 12px;
   text-align: left;
