@@ -9799,7 +9799,7 @@ td img {
       display: block;
       overflow-x: auto;
       white-space: nowrap;
-      width: 30%;
+      width: 100%;
   }
   
   th, td {
