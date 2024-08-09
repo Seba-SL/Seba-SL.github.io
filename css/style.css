@@ -9218,6 +9218,11 @@ button.bg-dark:focus {
 }
 /* Estilo específico para pantallas pequeñas */
 @media (max-width: 600px) {
+
+  table {
+    max-width: 600px; /* Ajusta el ancho mínimo si es necesario */
+    width: auto; /* Permitir que la tabla se ajuste automáticamente */
+  }
   
   /* Ocultar los encabezados de la tabla */
   thead {
