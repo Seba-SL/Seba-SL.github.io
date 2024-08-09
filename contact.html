@@ -193,39 +193,48 @@
                         
                     </div>
                 </div>
+
+
+
+               
+
                 <div class="col-lg-7 mb-5 my-lg-5 py-5 pl-lg-5">
+
+                    <h2>Contacto Rapido</h2>
                     <div class="contact-form">
                         <div id="success"></div>
                        
-                       
-                        <form action="https://formspree.io/f/xnnavvkb" method="POST" id="contactForm">
-                            
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="name" name="name" placeholder="Tu nombre" required />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                           
-                            <div class="control-group">
-                                <input type="email" class="form-control p-4" id="email" name="email" placeholder="Tu Email" required />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            
-                            div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" name="subject" placeholder="Asunto" required />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            
-                            <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" name="message" placeholder="Mensaje" required></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                           
-                            <div>
-                                <button class="btn btn-primary py-3 px-5" type="submit" id="sendMessageButton">Enviar</button>
-                            </div>
-                       
-                        </form>
+                        <form
+                        action="https://formspree.io/f/xnnavvkb"
+                        method="POST"
+                      >
+                      <div class="control-group">
+                        
+                        
+                        
+                        <label>
+                         Tu Mail:
+                          <input type="email" class="form-control p-6"  placeholder="email" name="email">
+                        </label>
 
+                      </div>
+
+                      <div class="control-group">
+                        
+                        <label>
+                          Mensaje:
+                          <textarea  class="form-control p-5" rows="6"  name="message"></textarea>
+                        </label>
+
+                    </div>
+
+                    <div class="control-group">
+                        
+                        <!-- your other form fields go here -->
+                        <button class="btn btn-primary py-3 px-5" type="submit">Enviar</button>
+                    </div>
+                    
+                    </form>
 
 
                     </div>
