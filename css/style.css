@@ -9218,27 +9218,50 @@ button.bg-dark:focus {
 }
 /* Estilo específico para pantallas pequeñas */
 @media (max-width: 600px) {
-  table {
+  
+  /* Ocultar los encabezados de la tabla */
+  thead {
+    display: none;
+  }
+
+  /* Convertir las filas de la tabla en bloques */
+  tbody, tr {
     display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-  }th, td {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  /* Hacer que cada celda sea un bloque */
+  td {
     display: block;
-    text-align: right;
+    width: 100%;
     position: relative;
+    padding: 10px 0;
+    box-sizing: border-box;
   }
 
-  th::before, td::before {
-    content: attr(data-label);
+  /* Ocultar la celda de la imagen del enlace en dispositivos móviles */
+  td:first-child {
+    display: yes;
+  }
+
+  /* Mostrar la imagen del enlace en la celda del título */
+  td:nth-child(2)::before {
+    content: "";
+    display: block;
     position: absolute;
-    left: 0;width: 50%;
-    padding-left: 10px;
-    font-weight: bold;
-    text-align: left;
+    left: 0;
+    width: 35px; /* Tamaño de la imagen */
+    height: 35px; /* Tamaño de la imagen */
+    background-image: url('img/Proyectos/link.png'); /* Imagen del enlace */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
   }
 
-  td::before {
-    content: '';
+  /* Asegúrate de que el texto no quede sobre la imagen */
+  td:nth-child(2) {
+    padding-left: 45px;
   }
 }
 
