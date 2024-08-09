@@ -9216,6 +9216,31 @@ button.bg-dark:focus {
     text-align: center !important;
   }
 }
+/* Estilo específico para pantallas pequeñas */
+@media (max-width: 600px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }th, td {
+    display: block;
+    text-align: right;
+    position: relative;
+  }
+
+  th::before, td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;width: 50%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  td::before {
+    content: '';
+  }
+}
 
 @media (min-width: 768px) {
   .text-md-left {
