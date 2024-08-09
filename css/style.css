@@ -9264,6 +9264,8 @@ button.bg-dark:focus {
     background-position: left center;
   }
 
+
+
   /* Asegúrate de que el texto no quede sobre la imagen */
   td:nth-child(2) {
     padding-left: 45px;
