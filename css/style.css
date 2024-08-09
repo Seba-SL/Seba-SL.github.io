@@ -9233,7 +9233,7 @@ button.bg-dark:focus {
   tbody, tr {
     display: block;
     width: 100%;
-    margin-bottom: 1em;
+    margin-bottom: 5em;
   }
 
   /* Hacer que cada celda sea un bloque */
