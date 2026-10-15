@@ -5,6 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+ 
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -75,6 +76,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  color:#14251F;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
@@ -152,13 +154,13 @@ sup {
 }
 
 a {
-  color: #4d3e25;
+  color: #14251F;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #574d3e;
+  color: #14251F;
   text-decoration: underline;
 }
 
@@ -9891,3 +9893,77 @@ td img {
 }
 
 
+/* Contenedor y bordes de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--tech-panel); /* #1C3329 - Verde bosque */
+    border: 1px solid var(--tech-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Estilo para la fila del encabezado */
+table thead tr {
+    background-color: var(--tech-dark-bg); /* #0d1915 - Verde muy oscuro para destacar la cabecera */
+    border-bottom: 2px solid var(--tech-border);
+}
+
+/* Estilo de los títulos de las columnas (th) */
+table th {
+    color: var(--tech-accent) !important; /* #789681 - Verde salvia destacando los textos */
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--tech-border);
+}
+
+/* Alineación de imágenes/iconos dentro del encabezado */
+table th img {
+    vertical-align: middle;
+    margin-right: 8px;
+    filter: brightness(0.9) contrast(1.1); /* Opcional: suaviza iconos para integrarse mejor */
+}/* Contenedor desplazable para la tabla */
+.table-responsive-container {
+    width: 100%;
+    max-height: 550px; /* Ajusta este valor para mostrar más o menos proyectos a la vez */
+    overflow-y: auto;  /* Permite scroll vertical cuando excede la altura */
+    overflow-x: auto;  /* Permite scroll horizontal en pantallas pequeñas */
+    background: var(--tech-panel);
+    border: 1px solid var(--tech-border);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Mantener el encabezado de la tabla fijo al hacer scroll */
+.table-responsive-container table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--tech-dark-bg) !important;
+    color: var(--tech-accent) !important;
+    border-bottom: 2px solid var(--tech-border);
+}
+
+/* Personalización de la barra de desplazamiento (Scrollbar temática) */
+.table-responsive-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.table-responsive-container::-webkit-scrollbar-track {
+    background: var(--tech-dark-bg);
+    border-radius: 4px;
+}
+
+.table-responsive-container::-webkit-scrollbar-thumb {
+    background: var(--tech-accent);
+    border-radius: 4px;
+}
+
+.table-responsive-container::-webkit-scrollbar-thumb:hover {
+    background: var(--tech-text);
+}

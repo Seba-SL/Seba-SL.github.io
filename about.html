@@ -1,359 +1,517 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="utf-8">
-    <title>Biografía</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Portafolio Digital" name="keywords">
-    <meta content="Portafolio Digital" name="description">
-
-   <!-- Favicon -->
-   <link href="img/favicon.png" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
-
-    <!-- Font Awesome -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Trayectoria de Sebastián Lazo: técnico electrónico y estudiante avanzado de Ingeniería Electrónica en FIUBA. Proyectos, formación e intereses técnicos.">
+    <meta name="keywords" content="Sebastián Lazo, electrónica, FIUBA, sistemas embebidos, instrumentación, automatización, PCB">
+    <title>Trayectoria | Sebastián Lazo</title>
+    <link rel="icon" href="img/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Flaticon Font -->
     <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            /* Paleta personalizada */
+            --tech-bg: #14251F;        /* Fondo principal: Verde casi negro */
+            --tech-panel: #1C3329;     /* Navegación y tarjetas: Verde bosque */
+            --tech-accent: #789681;    /* Detalles y botones: Verde salvia */
+            --tech-text: #DCE7DD;      /* Texto destacado: Verde grisáceo claro */
+            --tech-muted: #A7B9AA;     /* Texto secundario: Salvia suave */
+            --tech-border: rgba(120, 150, 129, 0.25);
+            --tech-dark-bg: #0d1915;   /* Fondo secundario oscuro */
+        }
+
+        body {
+            background: var(--tech-bg);
+            color: var(--tech-text);
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: .3px;
+            color: var(--tech-text);
+        }
+
+        a {
+            transition: color .2s ease, border-color .2s ease, transform .2s ease;
+        }
+
+        .topbar-tech {
+            background: var(--tech-dark-bg);
+            border-bottom: 1px solid var(--tech-border);
+        }
+
+        .topbar-tech a {
+            color: var(--tech-muted);
+        }
+
+        .topbar-tech a:hover {
+            color: var(--tech-text);
+            text-decoration: none;
+        }
+
+        .nav-bar {
+            background: var(--tech-panel);
+        }
+
+        .navbar.bg-secondary {
+            background: var(--tech-panel) !important;
+            border-bottom: 1px solid var(--tech-border);
+        }
+
+        .navbar-brand {
+            font-size: 1.55rem;
+            color: var(--tech-text) !important;
+        }
+
+        .navbar-brand span {
+            color: var(--tech-accent) !important;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: var(--tech-muted);
+            padding: 1rem .85rem;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover, 
+        .navbar-dark .navbar-nav .nav-link.active {
+            color: var(--tech-text);
+        }
+
+        .dropdown-menu {
+            background: var(--tech-panel);
+            border: 1px solid var(--tech-border);
+        }
+
+        .dropdown-item {
+            color: var(--tech-text);
+        }
+
+        .dropdown-item:hover {
+            background: rgba(120, 150, 129, 0.15);
+            color: var(--tech-text);
+        }
+
+        .hero-tech {
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at 85% 20%, rgba(120, 150, 129, 0.18), transparent 40%), linear-gradient(125deg, var(--tech-dark-bg) 20%, var(--tech-panel) 100%);
+            border-bottom: 1px solid var(--tech-border);
+        }
+
+        .hero-tech:before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(rgba(120, 150, 129, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 150, 129, 0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+            mask-image: linear-gradient(to right, transparent, #000);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            color: var(--tech-accent);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-tech h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.08;
+            color: var(--tech-text);
+        }
+
+        .hero-tech h1 span {
+            color: var(--tech-accent);
+        }
+
+        .hero-lead {
+            max-width: 720px;
+            color: var(--tech-muted);
+            font-size: 1.08rem;
+        }
+
+        .btn-tech {
+            background: var(--tech-accent);
+            color: var(--tech-dark-bg);
+            border: 1px solid var(--tech-accent);
+            font-weight: 700;
+            border-radius: 4px;
+            padding: .75rem 1.25rem;
+        }
+
+        .btn-tech:hover {
+            background: var(--tech-text);
+            border-color: var(--tech-text);
+            color: var(--tech-dark-bg);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-tech {
+            border: 1px solid var(--tech-accent);
+            color: var(--tech-text);
+            border-radius: 4px;
+            padding: .75rem 1.25rem;
+        }
+
+        .btn-outline-tech:hover {
+            border-color: var(--tech-text);
+            color: var(--tech-text);
+            background: rgba(120, 150, 129, 0.1);
+        }
+
+        .hero-card {
+            background: rgba(28, 51, 41, 0.8);
+            border: 1px solid var(--tech-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,.3);
+        }
+
+        .hero-symbol {
+            width: 100%;
+            min-height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--tech-accent);
+            font-size: 6rem;
+            background: linear-gradient(145deg, rgba(120, 150, 129, 0.15), rgba(20, 37, 31, 0.4));
+            border: 1px solid var(--tech-border);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .hero-symbol:after {
+            content: "EMBEDDED / ELECTRONICS";
+            position: absolute;
+            bottom: 14px;
+            font-size: .65rem;
+            letter-spacing: 2px;
+            color: var(--tech-muted);
+        }
+
+        .section-tech {
+            padding: 5rem 0;
+            background: var(--tech-bg);
+        }
+
+        .section-alt {
+            background: var(--tech-dark-bg);
+        }
+
+        .section-title-tech {
+            font-size: 2.3rem;
+            margin-bottom: .8rem;
+            color: var(--tech-text);
+        }
+
+        .section-intro {
+            color: var(--tech-muted);
+            max-width: 720px;
+        }
+
+        .tech-card {
+            height: 100%;
+            background: var(--tech-panel);
+            border: 1px solid var(--tech-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform .2s, border-color .2s;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--tech-accent);
+        }
+
+        .tech-icon {
+            color: var(--tech-accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card h3 {
+            font-size: 1.3rem;
+            color: var(--tech-text);
+        }
+
+        .tech-card p, .muted {
+            color: var(--tech-muted);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 1.7rem;
+        }
+
+        .timeline:before {
+            content: "";
+            position: absolute;
+            left: 5px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: linear-gradient(var(--tech-accent), rgba(120, 150, 129, 0.1));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0 0 2rem 1.2rem;
+        }
+
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -1.7rem;
+            top: 7px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--tech-accent);
+            box-shadow: 0 0 0 4px rgba(120, 150, 129, 0.2);
+        }
+
+        .timeline-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: .25rem;
+            color: var(--tech-text);
+        }
+
+        .timeline-label {
+            font-size: .75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--tech-accent);
+            font-weight: 700;
+        }
+
+        .tag-tech {
+            display: inline-block;
+            border: 1px solid var(--tech-border);
+            background: rgba(120, 150, 129, 0.12);
+            color: var(--tech-text);
+            border-radius: 4px;
+            padding: .4rem .65rem;
+            margin: .25rem .25rem .25rem 0;
+            font-size: .82rem;
+        }
+
+        .gallery-tech img, .gallery-tech iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 220px;
+            object-fit: cover;
+            border: 1px solid var(--tech-border);
+            border-radius: 8px;
+        }
+
+        .gallery-tech .media-box {
+            height: 100%;
+            min-height: 220px;
+        }
+
+        .footer-tech {
+            background: var(--tech-dark-bg);
+            border-top: 1px solid var(--tech-border);
+            color: var(--tech-muted);
+        }
+
+        .footer-tech a {
+            color: var(--tech-muted);
+        }
+
+        .footer-tech a:hover {
+            color: var(--tech-text);
+            text-decoration: none;
+        }
+
+        .small-label {
+            font-size: .75rem;
+            letter-spacing: 1.5px;
+            color: var(--tech-accent);
+            text-transform: uppercase;
+        }
+
+        @media(max-width:767.98px) {
+            .section-tech { padding: 3.5rem 0; }
+            .hero-tech { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+            .hero-symbol { min-height: 180px; margin-top: 1rem; }
+            .navbar-brand { font-size: 1.25rem; }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-dark py-3">
+    <div class="topbar-tech py-2">
+        <div class="container d-flex justify-content-between align-items-center flex-wrap">
+            <a href="https://drive.google.com/file/d/1NTUH_RHf2ZLzwtBnD9ZlAFjxjrs0hVnP/view?usp=sharing" target="_blank" rel="noopener noreferrer"><i class="far fa-file-pdf mr-2"></i>Ver CV</a>
+            <div class="d-flex align-items-center">
+                <a class="mx-3" href="https://github.com/Seba-SL" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github mr-1"></i> GitHub</a>
+                <a class="mx-3" href="https://www.linkedin.com/in/sebastian-nahuel-lazo-4206a2174/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a class="ml-3" href="https://www.youtube.com/channel/UCj-dM2kd08ZkQ26ItYftdfg" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid nav-bar p-0">
+        <div class="container p-0">
+            <nav class="navbar navbar-expand-lg navbar-dark py-3">
+                <a href="index.html" class="navbar-brand"><span>SL /</span> Sebastián Lazo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Abrir navegación"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Inicio</a>
+                        <a href="about.html" class="nav-item nav-link active" aria-current="page">Trayectoria</a>
+                        <a href="project.html" class="nav-item nav-link">Proyectos</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Recomendados</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="https://labi.fi.uba.ar/" class="dropdown-item" target="_blank" rel="noopener noreferrer">LABI FIUBA</a>
+                                <a href="https://electgpl.blogspot.com/" class="dropdown-item" target="_blank" rel="noopener noreferrer">Electgpl</a>
+                                <a href="https://lu4bb.com/" class="dropdown-item" target="_blank" rel="noopener noreferrer">Buenos Aires Radio Club</a>
+                                <a href="https://fede.dm/" class="dropdown-item" target="_blank" rel="noopener noreferrer">Fede</a>
+                                <a href="https://bonzzard.com.ar/" class="dropdown-item" target="_blank" rel="noopener noreferrer">Bonzzard</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero-tech py-5">
+        <div class="container hero-content py-lg-5">
+            <div class="row align-items-center">
+                <div class="col-lg-8 py-3">
+                    <div class="eyebrow mb-3"><i class="fas fa-microchip mr-2"></i>Perfil técnico / Trayectoria</div>
+                    <h1 class="mb-4">Sebastián <span>Lazo</span></h1>
+                    <p class="hero-lead mb-4">Técnico electrónico y estudiante avanzado de Ingeniería Electrónica en FIUBA. Interesado en el desarrollo de hardware, los sistemas embebidos, electrónica de potencia la instrumentación y la automatización.</p>
+                    <a href="project.html" class="btn btn-tech mr-2 mb-2"><i class="fas fa-code-branch mr-2"></i>Ver proyectos</a>
+                    <a href="https://drive.google.com/file/d/1NTUH_RHf2ZLzwtBnD9ZlAFjxjrs0hVnP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-outline-tech mb-2"><i class="far fa-file-alt mr-2"></i>Consultar CV</a>
+                </div>
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="hero-card">
+                        <div class="hero-symbol" aria-label="Símbolo de microchip"><i class="fas fa-microchip"></i></div>
+                        <div class="d-flex justify-content-between mt-3"><span class="small-label">Hardware</span><span class="small-label">Firmware</span><span class="small-label">Mediciones</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-tech">
+            <div class="container">
+                <div class="row align-items-start">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <div class="eyebrow mb-2">01 / Perfil</div>
+                        <h2 class="section-title-tech">Sobre mí</h2>
+                        <p class="section-intro">Formación técnica, curiosidad y aprendizaje aplicado.</p>
+                    </div>
+                    <div class="col-lg-8">
+                        <p>Soy técnico electrónico y estudiante avanzado de Ingeniería Electrónica en la Facultad de Ingeniería de la Universidad de Buenos Aires (FIUBA). Mi formación combina electrónica, programación y resolución de problemas técnicos.</p>
+                        <p>Me interesa comprender los sistemas desde el circuito y la adquisición de señales hasta el firmware que permite controlarlos. En mis proyectos experimento con microcontroladores, sensores, electrónica de potencia, diseño de PCB y comunicación entre dispositivos.</p>
+                        <p>Complementé mi formación académica con cursos de reparación de celulares, automatización mediante PLC, desarrollo Full-Stack y comunicaciones con microcontroladores. Busco seguir desarrollándome en ámbitos donde pueda combinar mediciones, diseño, implementación y diagnóstico técnico.</p>
+                        <div class="mt-3"><span class="tag-tech">Electrónica</span><span class="tag-tech">Sistemas embebidos</span><span class="tag-tech">Instrumentación</span><span class="tag-tech">Automatización</span><span class="tag-tech">Programación</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-tech section-alt">
+            <div class="container">
+                <div class="eyebrow mb-2">02 / Formación</div>
+                <h2 class="section-title-tech">Mi trayectoria</h2>
+                <p class="section-intro mb-5">Una formación construida entre la educación técnica, la universidad y el aprendizaje complementario.</p>
+                <div class="row">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-label">Formación universitaria · En curso</div>
+                                <h3>Ingeniería Electrónica</h3>
+                                <p class="muted mb-2">Facultad de Ingeniería — Universidad de Buenos Aires</p>
+                                <p>Profundización en fundamentos de electrónica, señales y sistemas, control y diseño de soluciones técnicas.</p>
+                                <a href="https://www.fi.uba.ar/" target="_blank" rel="noopener noreferrer">Sitio de FIUBA <i class="fas fa-external-link-alt ml-1 small"></i></a>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-label">Formación técnica</div>
+                                <h3>Técnico Electrónico</h3>
+                                <p class="muted mb-2">Escuela Técnica N.º 1 Griselda Mazzettele</p>
+                                <p>Base práctica en electrónica y trabajo de taller, con experiencias de aprendizaje y resolución de problemas en equipo.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-label">Formación complementaria</div>
+                                <h3>Cursos y aprendizaje aplicado</h3>
+                                <p class="muted mb-2">Automatización, reparación y desarrollo de software</p>
+                                <ul class="pl-3">
+                                    <li>Reparación de dispositivos celulares.</li>
+                                    <li>Automatización industrial con PLC.</li>
+                                    <li>Desarrollo Full-Stack — <a href="https://egg.live/es-ar/" target="_blank" rel="noopener noreferrer">Egg</a>.</li>
+                                    <li>Comunicaciones con microcontroladores — <a href="https://edutech.education/" target="_blank" rel="noopener noreferrer">Edutech</a>.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-tech">
+            <div class="container">
+                <div class="eyebrow mb-2">03 / Áreas de interés</div>
+                <h2 class="section-title-tech">Electrónica aplicada y programación</h2>
+                <p class="section-intro mb-4">Me interesa desarrollar sistemas donde el hardware, el software y las mediciones trabajen en conjunto.</p>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-3"><div class="tech-card"><div class="tech-icon"><i class="fas fa-microchip"></i></div><h3>Sistemas embebidos</h3><p class="mb-0">Microcontroladores, sensores, interfaces y comunicación entre dispositivos.</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-3"><div class="tech-card"><div class="tech-icon"><i class="fas fa-wave-square"></i></div><h3>Instrumentación</h3><p class="mb-0">Adquisición de señales, mediciones, pruebas y análisis del comportamiento de circuitos.</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-3"><div class="tech-card"><div class="tech-icon"><i class="fas fa-project-diagram"></i></div><h3>Diseño electrónico</h3><p class="mb-0">Circuitos, diseño de PCB y prototipos para evaluar soluciones de hardware.</p></div></div>
+                    <div class="col-md-6 col-lg-3 mb-3"><div class="tech-card"><div class="tech-icon"><i class="fas fa-cogs"></i></div><h3>Automatización</h3><p class="mb-0">Lógica de control, PLC e integración de componentes en sistemas técnicos.</p></div></div>
+                </div>
+                <div class="mt-4"><a href="project.html" class="btn btn-tech">Explorar proyectos <i class="fas fa-arrow-right ml-2"></i></a></div>
+            </div>
+        </section>
+
+        <section class="section-tech section-alt">
+            <div class="container">
+                <div class="eyebrow mb-2">04 / Registro visual</div>
+                <h2 class="section-title-tech">Experiencias y aprendizaje</h2>
+                <p class="section-intro mb-4">Imágenes y material audiovisual de mi recorrido. Las fotografías se conservan desde la carpeta original del sitio.</p>
+                <div class="row gallery-tech">
+                    <div class="col-md-6 col-lg-4 mb-4"><div class="media-box"><a href="img/AcercaDeMi/pizarronTecnica.jpg" target="_blank" rel="noopener noreferrer"><img src="img/AcercaDeMi/pizarronTecnica.jpg" alt="Pizarrón de la escuela técnica" loading="lazy"></a></div></div>
+                    <div class="col-md-6 col-lg-4 mb-4"><div class="media-box"><a href="img/AcercaDeMi/olimpiadasElectronica.jpg" target="_blank" rel="noopener noreferrer"><img src="img/AcercaDeMi/olimpiadasElectronica.jpg" alt="Participación en actividades de electrónica" loading="lazy"></a></div></div>
+                    <div class="col-md-6 col-lg-4 mb-4"><div class="media-box"><a href="img/AcercaDeMi/telePilar.png" target="_blank" rel="noopener noreferrer"><img src="img/AcercaDeMi/telePilar.png" alt="Registro audiovisual de una experiencia técnica" loading="lazy"></a></div></div>
+                    <div class="col-12"><div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/2vTS_qaNXko" title="Video de una experiencia de formación técnica" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-tech py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white pr-3-link" href="https://drive.google.com/file/d/1NTUH_RHf2ZLzwtBnD9ZlAFjxjrs0hVnP/view?usp=sharing" target="_blank" rel="noopener">CV </a>
-                   
-                      
-                    </div>
+            <div class="row align-items-start">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="small-label mb-2"></div>
+                    <h3 class="text-white">Contacto</h3>
+                    <p class="mb-2"><i class="far fa-envelope mr-2"></i><a href="mailto:sebalazo1@gmail.com">sebalazo1@gmail.com</a></p>
+                    <a class="mr-3" href="https://www.linkedin.com/in/sebastian-nahuel-lazo-4206a2174/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in mr-1"></i>LinkedIn</a>
+                    <a href="https://github.com/Seba-SL" target="_blank" rel="noopener noreferrer"><i class="fab fa-github mr-1"></i>GitHub</a>
                 </div>
-                <div class="col-md-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-    
-                        <a class="text-white px-3" href="https://www.linkedin.com/in/sebastian-nahuel-lazo-4206a2174/"  target="_blank" rel="noopener">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-        
-                        <a class="text-white pl-3" href="https://www.youtube.com/channel/UCj-dM2kd08ZkQ26ItYftdfg">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
+                <div class="col-lg-6">
+                    <div class="small-label mb-2">Navegación</div>
+                    <a class="mr-3" href="index.html">Inicio</a>
+                    <a class="mr-3" href="about.html">Trayectoria</a>
+                    <a class="mr-3" href="project.html">Proyectos</a>
+                    <a href="contact.html">Contacto</a>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
- <!-- Navbar Start -->
- <div class="container-fluid position-relative nav-bar p-0">
-    <div class="container position-relative" style="z-index: 9;">
-        <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-
-            <a href="" class="navbar-brand">
-                <h1 class="m-0 display-5 text-white"><span class="text-primary">SL-</span> Sebastián Lazo</h1>
-            </a>
-
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                <div class="navbar-nav ml-auto py-0">
-                    <a href="index.html" class="nav-item nav-link ">Inicio</a>
-                    <a href="about.html" class="nav-item nav-link active">Trayecto</a>
-                    <!-- <a href="blog.html" class="nav-item nav-link">Blog</a> -->
-                    <a href="project.html" class="nav-item nav-link">Proyectos</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Recomendados</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="https://labi.fi.uba.ar/" class="dropdown-item">Labi Fiuba</a>
-                            <a href="http://electgpl.blogspot.com/" class="dropdown-item">Electgpl</a>
-                            <a href="https://lu4bb.com/ "class="dropdown-item">Buenos Aires Radio Club</a>
-                            <a href="https://fede.dm/" class="dropdown-item">Fede</a>
-                            <a href="https://bonzzard.com.ar/" class="dropdown-item">Bonzzard</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contacto</a>
-                </div>
-            </div>
-
-        </nav>
-    </div>
-</div>
-<!-- Navbar End -->
-
-     <!-- Under Nav Start -->
-     <div class="container-fluid bg-white py-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 text-left text-lg-center mb-3 mb-lg-0">
-                    <div class="d-inline-flex text-left">
-                        <!-- <h1 class="flaticon-email font-weight-normal text-primary m-0 mr-3"></h1>
-                        <div class="d-flex flex-column">
-                            <h5>Mail</h5>
-                            <p class="m-0">sebalazo1@gmail.com</p> -->
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
-    </div>
-    <!-- Under Nav End -->
-
-
-    <!-- Page Header Start -->
-    <div class="container-fluid bg-secondary py-4">
-        <div class="container py-4">
-            <div class="row align-items-center py-3">
-                <div class="col-md-6 text-center text-md-left">
-                    <h1 class="mb-4 mb-md-0 text-primary text-uppercase">Acerca de mi</h1>
-                </div>
-                <div class="col-md-6 text-center text-md-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a href="index.html" class="btn btn-outline-primary -link ">Inicio</a>
-                        <i class="fas fa-angle-double-right text-primary mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Acerca de mí</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Page Header Start -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5">
-                    <div class="d-flex flex-column align-items-center justify-content-center bg-primary h-100 py-5 px-3">
-                        <i class="flaticon-brickwall display-1 font-weight-normal text-secondary mb-3"></i>
-                        <h4 class="display-3 mb-3">- </h4>
-                        <h1 class="m-0"> -</h1>
-                    </div>
-                </div>
-                <div class="col-lg-7 m-0 my-lg-5 pt-5 pb-5 pb-lg-2 pl-lg-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Mis primeros pasos</h6>
-                    <h1 class="mb-4 section-title">Formación y crecimiento</h1>
-                    <p>   
-                        Comencé mis estudios técnicos en electrónica en la Escuela Técnica Nº1 Griselda Mazzettele, donde participé en proyectos de taller que me permitieron aprender a trabajar en equipo y aplicar conceptos prácticos desde temprano.
-                    </p>
-                    <p> Más tarde complementé mi formación con cursos de reparación de celulares y automatización con PLC, lo que reafirmó mi vocación por la tecnología y me impulsó a iniciar la carrera de Ingeniería Electrónica en la 
-                        <a href="https://www.fi.uba.ar/" target="_blank" rel="noopener">Facultad de Ingeniería de Buenos Aires</a>.
-                    </p>
-                    <p>
-                        También desarrollé interés por la programación y el desarrollo web, realizando cursos de desarrollo Full-Stack en 
-                        <a href="https://egg.live/es-ar/" target="_blank" rel="noopener">Egg</a> y comunicaciones con microcontroladores en 
-                        <a href="https://edutech.education/" target="_blank" rel="noopener">Edutech</a>.
-                    </p>
-                    <p>  
-
-                    <div class="row py-2">
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-4">
-                               
-                                <img class="icono" src="img/AcercaDeMi/libro-abierto.png " alt="" style="width: 50px; height: 50px; margin-bottom: 10px;">
-                                
-                                <div class="nav-item dropdown">
-                                    
-                                    <h5  class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-top: 10px;"> Educación Secundaria</h5>
-                                   
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="blog.html" class="dropdown-item">Escuela Técnica Griselda Mazzettele </a>
-                                        
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-4">
-                                <i class=" fi fi-rr-graduation-cap"></i>
-                                <img class="icono" src="img/AcercaDeMi/universidad.png " alt="" style="width: 50px; height: 50px;margin-bottom: 10px;">
-                               
-                                <div class="nav-item dropdown">
-                                    
-                                    <h5  class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-top: 10px;"> Educación Universitaria</h5>
-                                   
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="https://www.fi.uba.ar/" class="dropdown-item" target="_blank" rel="noopener">Facultad de Ingeniería de Buenos Aires </a>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-4">
-                                <img class="icono" src="img/AcercaDeMi/desarrollo-web.png" alt="" style="width: 50px; height: 50px; margin-bottom: 10px;">
-                               
-                                <div class="nav-item dropdown">
-                                    
-                                    <h5  class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-top: 10px;"> Educación Complementaria</h5>
-                                    
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="https://webserver.mimuni.app/cmfp/front/?view=sedes" class="dropdown-item" target="_blank" rel="noopener">  Centro Municipal de Formación Profesional - Sede Fortabat</a>
-                                        <a  href="http://www.ituom.com/"  class="dropdown-item" target="_blank" rel="noopener">  Centro de Formación Profesional ITUOM 401 </a></a>
-                                        <a href="https://egg.live/es-ar/" class="dropdown-item"  target="_blank" rel="noopener">  Academia Egg</a>
-                                        <a href="https://edutech.education/"  class="dropdown-item" target="_blank" rel="noopener">  Edutech</a>
-                                        
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-4">
-                                <img class="icono" src="img/AcercaDeMi/job.png " alt="" style="width: 50px; height: 50px;margin-bottom: 10px;">
-                              
-                                <div class="nav-item dropdown">
-                                    
-                                    <h5  class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-top: 10px;">  Experiencias laborales</h5>
-                                   
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="https://www.easy.com.ar/" class="dropdown-item">Easy</a>
-                                        <a href="http://www.transur.net/" class="dropdown-item">Transur</a>
-                                      
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex align-items-center mb-4">
-                                <img class="icono" src="img/AcercaDeMi/mochila.png " alt="" style="width: 50px; height: 50px;margin-bottom: 10px;">
-                               
-                                <div class="nav-item dropdown">
-                                    
-                                    <h5  class="nav-link dropdown-toggle" data-toggle="dropdown" style="margin-top: 10px;"> Proyectos Personales</h5>
-                                   
-                                    <div class="dropdown-menu rounded-0 m-0">
-                                        <a href="https://www.youtube.com/shorts/ohRFDd8bRps" class="dropdown-item">Reparación de Celulares</a>
-                                        <a href="das.html"  class="dropdown-item" target="_blank" rel="noopener"> Emprendimiento de Muebles</a>
-                                      
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About End -->
-    <div class="grid-gallery">
-       
-        <img class="grid-gallery__image" src="img/AcercaDeMi/pizarronTecnica.jpg" alt="Imagen 9" width="10" height="40">
-        <img class="grid-gallery__image" src="img/AcercaDeMi/olimpiadasElectronica.jpg" alt="Imagen 10" width="10" height="40">
-        <img class="grid-gallery__image" src="img/AcercaDeMi/telePilar.png" alt="Imagen 10" width="10" height="40">
-        <iframe class="grid-gallery__image" src="https://www.youtube.com/embed/2vTS_qaNXko?si=VHj8wNKWg7MiDvIt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen  border-radius: 8px></iframe>
-    </div>
-    
-
-    <!-- Features Start -->
-    <div class="container-fluid bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 mt-5 py-5 pr-lg-5">
-                    <h6 class="text-primary font-weight-normal text-uppercase mb-3">Intereses</h6>
-                    <h1 class="mb-4 section-title">Electrónica y Programación </h1>
-                    <p class="mb-3"> <p>
-                        Me motiva trabajar en equipos donde se pueda aprender, crecer y construir soluciones que marquen una diferencia. Me interesa especialmente crear sistemas y hardware que sirvan de base para proyectos reales.
-                    </p>
-                    <p>
-                        Disfruto pensar la lógica detrás de las aplicaciones, organizar su arquitectura y resolver los problemas técnicos que surgen en el camino. También me resulta muy interesante trabajar con bases de datos y cuidar la seguridad de los datos.
-                    </p>
-                    <p>
-                        Esta área me permite combinar creatividad, análisis y técnica para desarrollar soluciones útiles y de impacto tanto para personas como para empresas.
-                    </p>
-                    </p>
-                    <ul class="list-inline">
-                        <li><h5><i class="far  text-primary mr-3">Aptitudes y habilidades</i></h5></li>
-                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Habilidad para trabajar en equipo</h5></li>
-                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Comunicación</h5></li>
-                        <li><h5><i class="far fa-check-square text-primary mr-3"></i>Adaptabilidad</h5></li>
-                    </ul>
-                    <a href="index.html" class="btn btn-primary mt-3 py-2 px-4">Inicio</a>
-                </div>
-                <div class="col-lg-5">
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
-                        <img class="h-100" src="img/feature.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Features End -->
-
-
-
-  <!-- Footer Start -->
-  <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-md-5">
-    <div class="row pt-5">
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="text-primary mb-4">A un solo toque </h4>
-            <p><i class="fa fa-envelope mr-2"></i>sebalazo1@gmai.com</p>
-            <div class="d-flex justify-content-start mt-4">
-
-                <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-linkedin-in"></i></a>
-               
-            </div>
-        </div>
-   
-        <div class="col-lg-3 col-md-6 mb-5">
-            <h4 class="text-primary mb-4">Acceso rapido</h4>
-            <div class="d-flex flex-column justify-content-start">
-                <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-                <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Biografía</a>
-                <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Proyectos</a>
-                <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contacto</a>
-            </div>
-        </div>
-       
-    </div>
-    <div class="container border-top border-secondary pt-5">
-        <p class="m-0 text-center text-white">
-            &copy; <a class="text-white font-weight-bold" href="#">Sebastián Lazo</a>. All Rights Reserved. Designed by
-            <a class="text-white font-weight-bold" href="https://htmlcodex.com">HTML Codex</a>
-        </p>
-    </div>
-</div>
-<!-- Footer End -->
-               
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-
-</html>
+            <hr style
