@@ -456,3 +456,26 @@
         .personal-dot {
             background-color: #030604;
         }
+        /* Contenedor de logos de tecnologías/herramientas */
+        .project-tech-stack {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 14px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08); /* Sutil separación interna */
+        }
+
+        /* Tamaño fijo y consistente para todos los logos pequeños */
+        .project-tech-stack img {
+            height: 22px;
+            width: auto;
+            object-fit: contain;
+            filter: opacity(0.85);
+            transition: filter 0.2s ease, transform 0.2s ease;
+        }
+
+        .project-card-link:hover .project-tech-stack img {
+            filter: opacity(1);
+            transform: scale(1.08);
+        }
