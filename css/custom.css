@@ -396,3 +396,63 @@
         .nav-bar .dropdown-menu {
             z-index: 1031;
         }
+        /* Estilos para tarjetas clickeables de proyectos */
+        .project-card-link {
+            text-decoration: none !important;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card-link .repair-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+        }
+
+        .project-card-link:hover .repair-card {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        /* Tarjetas clickeables de proyectos */
+        .project-card-link {
+            text-decoration: none !important;
+            color: inherit;
+            display: block;
+        }
+
+        .project-card-link .repair-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card-link:hover .repair-card {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Línea superior indicativa en cada tarjeta (Borde superior de acento) */
+        .repair-card.card-academic {
+            border-top: 4px solid #284aa7; /* Verde claro/clásico institucional */
+        }
+
+        .repair-card.card-personal {
+            border-top: 4px solid #030604; /* Verde oscuro / oliva sobrio */
+        }
+
+        /* Estilos de la leyenda superior */
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            border-radius: 3px;
+            margin-right: 6px;
+        }
+
+        .academic-dot {
+            background-color: #284aa7;
+        }
+
+        .personal-dot {
+            background-color: #030604;
+        }
