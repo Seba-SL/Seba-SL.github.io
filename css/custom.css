@@ -433,19 +433,19 @@
 
         /* Línea superior indicativa en cada tarjeta (Borde superior de acento) */
         .repair-card.card-academic {
-            border-top: 4px solid #284aa7; /* Verde claro/clásico institucional */
+            border-top: 25px solid #284aa7; /* Verde claro/clásico institucional */
         }
 
         .repair-card.card-personal {
-            border-top: 4px solid #030604; /* Verde oscuro / oliva sobrio */
+            border-top: 25px solid #030604; /* Verde oscuro / oliva sobrio */
         }
 
         /* Estilos de la leyenda superior */
         .legend-dot {
-            width: 12px;
-            height: 12px;
+            width: 25px;
+            height: 25px;
             display: inline-block;
-            border-radius: 3px;
+            border-radius: 4px;
             margin-right: 6px;
         }
 
@@ -487,3 +487,4 @@
             object-position: center center; /* Centra el encuadre */
             display: block;
         }
+   
